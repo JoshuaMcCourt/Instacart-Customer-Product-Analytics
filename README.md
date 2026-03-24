@@ -142,15 +142,23 @@ instacart_analytics/
 │ │ └── departments.csv
 
 │ │
+
 │ └── processed/ # Exported tables ready for analysis/Tableau
 
 │ ├── dim_users.csv
+
 │ ├── dim_products.csv
+
 │ ├── fact_orders.csv
+
 │ ├── fact_user_product.csv
+
 │ └── fact_user_cohorts.csv
+
 │
+
 ├── sql/ # SQL scripts organized by stage
+
 │ ├── 01_staging/ # Load raw CSVs into staging tables
 │ │ ├── 01_stg_orders.sql
 │ │ ├── 02_stg_order_products.sql
