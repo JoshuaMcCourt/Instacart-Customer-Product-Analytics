@@ -1,78 +1,64 @@
--- instacart_analytics/
--- ├── data/                                 # Raw and processed CSV files
--- │   ├── raw/
--- │   │   ├── orders.csv
--- │   │   ├── order_products__prior.csv
--- │   │   ├── order_products__train.csv
--- │   │   ├── products.csv
--- │   │   ├── aisles.csv
--- │   │   └── departments.csv
--- │   │
--- │   └── processed/                        # Exported tables for analysis/Tableau
--- │       ├── dim_users.csv
--- │       ├── dim_products.csv
--- │       ├── fact_orders.csv
--- │       ├── fact_user_product.csv
--- │       └── fact_user_cohorts.csv
--- │
--- ├── sql/                                  # All SQL scripts
--- │   ├── 01_staging/
--- │   │   ├── 01_stg_orders.sql
--- │   │   ├── 02_stg_order_products.sql
--- │   │   ├── 03_stg_products.sql
--- │   │   ├── 04_stg_aisles.sql
--- │   │   ├── 05_stg_departments.sql
--- │   │   └── 06_stg_quality_checks.sql
--- │   │
--- │   ├── 02_intermediate/
--- │   │   ├── 01_int_orders.sql
--- │   │   ├── 02_int_user_orders.sql
--- │   │   ├── 03_int_product_orders.sql
--- │   │   ├── 04_int_user_product_summary.sql
--- │   │   ├── 05_int_product_metrics.sql
--- │   │   ├── 06_int_user_metrics.sql
--- │   │   └── 07_int_user_cohorts.sql
--- │   │
--- │   ├── 03_feature_engineering/
--- │   │   ├── 01_user_features.sql
--- │   │   ├── 02_product_features.sql
--- │   │   ├── 03_user_product_features.sql
--- │   │   ├── 04_cohort_features.sql
--- │   │   ├── 05_time_based_features.sql
--- │   │   ├── 06_product_diversity_features.sql
--- │   │   └── 07_advanced_engagement_features.sql
--- │   │
--- │   ├── 04_marts/
--- │   │   ├── 01_dim_users.sql
--- │   │   ├── 02_dim_products.sql
--- │   │   ├── 03_fact_orders.sql
--- │   │   ├── 04_fact_user_product.sql
--- │   │   ├── 05_fact_user_cohorts.sql
--- │   │   └── 06_export_files.sql
--- │   │
--- │   └── 05_analysis/
--- │       ├── 01_data_overview.sql
--- │       ├── 02_order_patterns.sql
--- │       ├── 03_basket_analysis.sql
--- │       ├── 04_product_analysis.sql
--- │       ├── 05_reorder_analysis.sql
--- │       ├── 06_user_behaviour.sql
--- │       └── 07_advanced_insights.sql
--- │
--- ├── docs/
--- │   ├── visuals/                          # Exported Tableau charts/screenshots
--- │   │   ├── order_patterns.png
--- │   │   ├── basket_analysis.png
--- │   │   ├── product_popularity.png
--- │   │   ├── reorder_analysis.png
--- │   │   └── user_behaviour.png
--- │   │
--- │   └── instacart_sql_pipeline_diagram.png # Diagram of ETL flow
--- │
--- ├── full_script/
--- │   └── full_script.sql                    # Combine all SQL files in one
--- │
--- ├── README.md                              # Project overview, instructions
--- ├── .gitignore                             # Ignore raw data, temp files, system files
--- └── structure.txt   
-
+instacart_analytics/
+├── data/                                 # Raw and processed CSV files
+│   ├── raw/
+│   │   ├── orders.csv
+│   │   ├── order_products__prior.csv
+│   │   ├── order_products__train.csv
+│   │   ├── products.csv
+│   │   ├── aisles.csv
+│   │   └── departments.csv
+│   │
+│   └── processed/                        # Exported tables for analysis/Tableau
+│       ├── dim_users.csv
+│       ├── dim_products.csv
+│       ├── fact_orders.csv
+│       ├── fact_user_product.csv
+│       └── fact_user_cohorts.csv
+│
+├── sql/
+│   ├── 01_staging/
+│   │   ├── 01_load_orders.sql           # Load raw orders CSV into staging table
+│   │   ├── 02_load_order_products.sql   # Load prior/train order products
+│   │   ├── 03_load_products.sql         # Load product metadata
+│   │   ├── 04_load_aisles.sql           # Load aisle information
+│   │   └── 05_load_departments.sql      # Load department metadata
+│   │
+│   ├── 02_intermediate/
+│   │   ├── 01_merge_order_products.sql  # Merge prior & train order products
+│   │   ├── 02_clean_users.sql           # Handle missing user/order info
+│   │   └── 03_clean_products.sql        # Standardize product names/categories
+│   │
+│   ├── 03_feature_engineering/
+│   │   ├── 01_user_metrics.sql          # Compute reorder rate, avg basket size
+│   │   ├── 02_product_metrics.sql       # Compute avg purchase position, reorder rate
+│   │   ├── 03_basket_diversity.sql      # Compute variety per user
+│   │   └── 04_affinity_scores.sql       # Compute cross-product co-occurrence
+│   │
+│   ├── 04_marts/
+│   │   ├── 01_dim_users.sql              # Create dim_users table
+│   │   ├── 02_dim_products.sql           # Create dim_products table
+│   │   ├── 03_dim_orders.sql             # Create dim_orders table
+│   │   └── 04_fact_orders.sql            # Create fact_orders table
+│   │
+│   ├── 05_analysis/
+│   │   ├── 01_user_variety_segmentation.sql   # Segment users by basket variety
+│   │   ├── 02_predictable_users.sql           # Identify high-reorder users (robust)
+│   │   ├── 03_product_dependency.sql          # Avg purchase position for products
+│   │   ├── 04_cross_product_affinity.sql      # Product co-occurrence analysis
+│   │   └── 05_pareto_analysis.sql             # Pareto cumulative contribution of products
+│   │
+│   └── full_pipeline.sql                 # Single script containing all parts for execution
+│
+├── docs/
+│   ├── visuals/                          # Exported Tableau charts/screenshots
+│   │   ├── order_patterns.png
+│   │   ├── basket_analysis.png
+│   │   ├── product_popularity.png
+│   │   ├── reorder_analysis.png
+│   │   └── user_behaviour.png
+│   │
+│   └── instacart_sql_pipeline_diagram.png # Diagram of ETL flow
+│
+├── README.md                              # Project overview, instructions
+├── .gitignore                             # Ignore raw data, temp files, system files
+└── structure.text                         # Full folder structure and description
