@@ -25,38 +25,71 @@ The project highlights:
 ### ETL & Analytics Pipeline Flow
 
 Raw CSVs
+
 │
+
 ▼
+
 +---------------------+
+
 | 01_staging/ | -- Load raw CSVs into staging tables
+
 | orders, products, |
+
 | aisles, depts |
+
 +---------------------+
+
 │
+
 ▼
+
 +---------------------+
+
 | 02_intermediate/ | -- Merge, clean, and summarize data
+
 | user & product |
+
 | order summaries |
+
 +---------------------+
+
 │
+
 ▼
+
 +---------------------+
+
 | 03_feature_engineering/ -- Compute metrics & features
+
 | user features, |
+
 | product features, |
+
 | cohort & engagement |
+
 +---------------------+
+
 │
+
 ▼
+
 +---------------------+
+
 | 04_marts/ | -- Build analytical tables
+
 | dim_users |
+
 | dim_products |
+
 | fact_orders |
+
 | fact_user_product |
+
 | fact_user_cohorts |
+
 +---------------------+
+
 │
 ▼
 +---------------------+
@@ -183,8 +216,13 @@ instacart_analytics/
 ## Skills Demonstrated
 
 **SQL Server ETL & Data Engineering:** Efficient staging, cleaning, and mart creation.
+
 **Analytical SQL:** CTEs, window functions, aggregations, cohort analysis, cross-product affinity.
+
 **Feature Engineering:** Reorder rates, basket diversity, product co-occurrence, engagement metrics.
+
 **Visualization Preparation:** Tableau-ready datasets with minimal processing.
+
 **Pipeline Design:** Reproducible, modular, and scalable workflow.
+
 **Portfolio Presentation:** Well-structured repository with documentation, visuals, and diagrams.
