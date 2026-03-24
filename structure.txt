@@ -67,10 +67,12 @@
 -- │   │   ├── reorder_analysis.png
 -- │   │   └── user_behaviour.png
 -- │   │
--- │   └── instacart_sql_pipeline_diagram.png # Optional diagram of ETL flow
+-- │   └── instacart_sql_pipeline_diagram.png # Diagram of ETL flow
 -- │
 -- ├── full_script/
--- │   └── full_script.sql                    # Optional: combine all SQL files in one
+-- │   └── full_script.sql                    # Combine all SQL files in one
 -- │
 -- ├── README.md                              # Project overview, instructions
--- └── .gitignore                             # Ignore raw data, temp files, system files
+-- ├── .gitignore                             # Ignore raw data, temp files, system files
+-- └── structure.txt   
+
