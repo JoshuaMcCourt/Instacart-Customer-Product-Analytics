@@ -91,34 +91,59 @@ Raw CSVs
 +---------------------+
 
 │
+
 ▼
+
 +---------------------+
+
 | 05_analysis/ | -- Advanced analytics & insights
+
 | order patterns |
+
 | basket analysis |
+
 | product popularity |
+
 | reorder analysis |
+
 | user behaviour |
+
 | advanced insights |
+
 +---------------------+
+
 │
+
 ▼
+
 Visualization-ready CSVs → Tableau Dashboards
+
 
 ## Folder Structure & Detailed Contents
 
 instacart_analytics/
+
 │
+
 ├── data/ # Raw and processed CSV files
+
 │ ├── raw/ # Original dataset CSVs
+
 │ │ ├── orders.csv
+
 │ │ ├── order_products__prior.csv
+
 │ │ ├── order_products__train.csv
+
 │ │ ├── products.csv
+
 │ │ ├── aisles.csv
+
 │ │ └── departments.csv
+
 │ │
 │ └── processed/ # Exported tables ready for analysis/Tableau
+
 │ ├── dim_users.csv
 │ ├── dim_products.csv
 │ ├── fact_orders.csv
