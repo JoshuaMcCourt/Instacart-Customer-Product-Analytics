@@ -19,7 +19,7 @@ This project demonstrates a complete end-to-end SQL Server analytics pipeline fo
 - `docs/instacart_sql_pipeline_diagram.png` – Diagram showing ETL flow.
 - `full_script/` – Single script with the entire pipeline.
 - `.gitignore` – Configured for Visual Studio, SQL, Tableau, and large CSVs.
-
+- `structure.text` - Presents the folder structure, with inclusion of all the files.
 ## Notes
 - **Raw and processed CSVs are excluded** due to GitHub file size limitations.
 - Use Tableau Desktop/Prep to connect to your SQL Server instance for visualizations.
