@@ -20,7 +20,30 @@ The project highlights:
 
 **Skills demonstrated:** SQL Server ETL, advanced T-SQL (CTEs, window functions), feature engineering, analytical thinking, scalable query optimization, and Tableau-ready data preparation.
 
----
+## Getting the Raw Instacart Dataset
+
+This project uses the **Instacart Market Basket Analysis** dataset. You can download all raw CSV files from Kaggle:  
+
+**Kaggle Dataset:** [Instacart Market Basket Analysis](https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis?select=order_products__prior.csv)
+
+### Included Files
+
+| Filename | Description |
+|----------|-------------|
+| `orders.csv` | Order-level information, including user ID, order sequence, and days since prior order. |
+| `order_products__prior.csv` | Products in users’ prior orders (main historical data for analysis). |
+| `order_products__train.csv` | Products in the training set (used for validation or modeling). |
+| `products.csv` | Product metadata (IDs, names, and categories). |
+| `aisles.csv` | Product aisle information. |
+| `departments.csv` | Product department information. |
+
+### Steps to Download
+
+1. **Create a Kaggle account** if you don’t already have one.  
+2. Visit the dataset page: [Kaggle Dataset Link](https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis/data)  
+3. Click **Download** to get a ZIP of all CSV files.  
+4. Unzip the archive and place all CSV files in your project’s `data/raw/` folder.
+5. **Reminder:** `order_products__prior.csv` is the largest file (~30M rows) and forms the foundation for most analytics in this project.
 
 ### ETL & Analytics Pipeline Flow
 
