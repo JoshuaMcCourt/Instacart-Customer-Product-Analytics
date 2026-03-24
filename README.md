@@ -160,64 +160,123 @@ instacart_analytics/
 ├── sql/ # SQL scripts organized by stage
 
 │ ├── 01_staging/ # Load raw CSVs into staging tables
+
 │ │ ├── 01_stg_orders.sql
+
 │ │ ├── 02_stg_order_products.sql
+
 │ │ ├── 03_stg_products.sql
+
 │ │ ├── 04_stg_aisles.sql
+
 │ │ ├── 05_stg_departments.sql
+
 │ │ └── 06_stg_quality_checks.sql
+
 │ │
+
 │ ├── 02_intermediate/ # Transformations & aggregations
+
 │ │ ├── 01_int_orders.sql
+
 │ │ ├── 02_int_user_orders.sql
+
 │ │ ├── 03_int_product_orders.sql
+
 │ │ ├── 04_int_user_product_summary.sql
+
 │ │ ├── 05_int_product_metrics.sql
+
 │ │ ├── 06_int_user_metrics.sql
+
 │ │ └── 07_int_user_cohorts.sql
+
 │ │
+
 │ ├── 03_feature_engineering/ # Compute advanced features
+
 │ │ ├── 01_user_features.sql
+
 │ │ ├── 02_product_features.sql
+
 │ │ ├── 03_user_product_features.sql
+
 │ │ ├── 04_cohort_features.sql
+
 │ │ ├── 05_time_based_features.sql
+
 │ │ ├── 06_product_diversity_features.sql
+
 │ │ └── 07_advanced_engagement_features.sql
+
 │ │
+
 │ ├── 04_marts/ # Build dimension and fact tables
+
 │ │ ├── 01_dim_users.sql
+
 │ │ ├── 02_dim_products.sql
+
 │ │ ├── 03_fact_orders.sql
+
 │ │ ├── 04_fact_user_product.sql
+
 │ │ ├── 05_fact_user_cohorts.sql
+
 │ │ └── 06_export_files.sql # Export processed tables to CSV
+
 │ │
+
 │ └── 05_analysis/ # Advanced analytics & insights
+
 │ ├── 01_data_overview.sql
+
 │ ├── 02_order_patterns.sql
+
 │ ├── 03_basket_analysis.sql
+
 │ ├── 04_product_analysis.sql
+
 │ ├── 05_reorder_analysis.sql
+
 │ ├── 06_user_behaviour.sql
+
 │ └── 07_advanced_insights.sql
+
 │
+
 ├── docs/ # Documentation & visualizations
+
 │ ├── visuals/ # Exported charts/screenshots from Tableau
+
 │ │ ├── order_patterns.png
+
 │ │ ├── basket_analysis.png
+
 │ │ ├── product_popularity.png
+
 │ │ ├── reorder_analysis.png
+
 │ │ └── user_behaviour.png
+
 │ │
+
 │ └── instacart_sql_pipeline_diagram.png # Optional ETL & analytics flow diagram
+
 │
+
 ├── full_script/ # Single file version of the full pipeline
+
 │ └── full_script.sql
+
 │
+
 ├── README.md # Project overview, instructions
+
 ├── .gitignore # Ignore raw data, temp files, system files
+
 └── structure.txt # File tree structure (this document)
+
 
 ## Notes & Considerations
 
