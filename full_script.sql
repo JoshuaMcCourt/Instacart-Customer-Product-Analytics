@@ -12,7 +12,9 @@
 -- │       ├── dim_users.csv
 -- │       ├── dim_products.csv
 -- │       ├── fact_orders.csv
+-- │       ├── fact_orders_tableau.csv
 -- │       ├── fact_user_product.csv
+-- │       ├── fact_user_product_tableau.csv
 -- │       └── fact_user_cohorts.csv
 -- │
 -- ├── sql/                                  # All SQL scripts
