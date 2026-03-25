@@ -49,15 +49,15 @@ instacart_analytics/
 │   │
 │   └── full_pipeline.sql                 # Single script containing all parts for execution
 │
-docs/
-├── visuals/                         # Exported Tableau charts/screenshots
-│   ├── order_patterns.png           # Line/area chart showing user order trends over time
-│   ├── basket_analysis.png          # Bar chart for basket size and product variety
-│   ├── product_popularity.png       # Top-selling products cumulative contribution (Pareto)
-│   ├── reorder_analysis.png         # Histogram of user reorder rates and predictability
-│   └── user_behaviour.png           # Split of users by variety, engagement, and loyalty
-│   │
-│   └── instacart_sql_pipeline_diagram.png  # Diagram of ETL flow
+├── docs/
+│   └── visuals/                         # Exported Tableau charts/screenshots
+│       ├── order_patterns.png           # Line/area chart showing order trends over time
+│       ├── basket_analysis.png          # Bar chart for basket size and product variety
+│       ├── product_popularity.png       # Top-selling item cumulative contribution (Pareto)
+│       ├── reorder_analysis.png         # Histogram of reorder rates and predictability
+│       ├── user_behaviour.png           # Split users by variety, engagement, and loyalty
+│       │
+│       └── instacart_sql_pipeline_diagram.png  # Diagram of ETL flow
 │
 ├── README.md                              # Project overview, instructions
 ├── .gitignore                             # Ignore raw data, temp files, system files
