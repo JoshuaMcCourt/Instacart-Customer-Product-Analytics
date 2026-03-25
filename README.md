@@ -284,7 +284,7 @@ instacart_analytics/
 
 │ │
 
-│ └── instacart_sql_pipeline_diagram.png # Optional ETL & analytics flow diagram
+│ └── instacart_sql_pipeline_diagram.png # ETL & analytics flow diagram
 
 │
 
