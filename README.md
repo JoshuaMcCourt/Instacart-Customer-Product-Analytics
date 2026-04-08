@@ -166,21 +166,21 @@ instacart_analytics/
 
 │ │
 
-│ └── processed/ # Exported tables ready for analysis/Tableau
+│ ├── processed/ # Exported tables ready for analysis/Tableau
 
-│     ├── dim_users.csv
+│ │ ├── dim_users.csv
 
-│     ├── dim_products.csv
+│ │ ├── dim_products.csv
 
-│     ├── fact_orders.csv
+│ │ ├── fact_orders.csv
 
-│     ├── fact_orders_tableau.csv
+│ │ ├── fact_orders_tableau.csv
 
-│     ├── fact_user_product.csv
+│ │ ├── fact_user_product.csv
 
-│     ├── fact_user_product_tableau.csv
+│ │ ├── fact_user_product_tableau.csv
 
-│     └── fact_user_cohorts.csv
+│ │ └── fact_user_cohorts.csv
 
 │
 
