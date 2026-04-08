@@ -276,11 +276,11 @@ instacart_analytics/
 
 │ ├── visuals/ # Exported charts/screenshots from Tableau
 
-│ │ ├── order_patterns.png
-
 │ │ ├── basket_analysis.png
 
-│ │ ├── product_popularity.png
+│ │ ├── order_patterns.png
+
+│ │ ├── orders_heatmap.png
 
 │ │ ├── reorder_analysis.png
 
@@ -302,7 +302,7 @@ instacart_analytics/
 
 ├── .gitignore # Ignore raw data, temp files, system files
 
-└── structure.txt # File tree structure (this document)
+└── structure.txt # File tree structure
 
 
 ## Notes & Considerations
