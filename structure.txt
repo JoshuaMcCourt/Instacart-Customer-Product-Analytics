@@ -53,11 +53,11 @@ instacart_analytics/
 │
 ├── docs/
 │   └── visuals/                         # Exported Tableau charts/screenshots
-│       ├── order_patterns.png           # Line/area chart showing order trends over time
 │       ├── basket_analysis.png          # Bar chart for basket size and product variety
-│       ├── product_popularity.png       # Top-selling item cumulative contribution (Pareto)
+│       ├── order_patterns.png           # Line chart showing order trends over time
+│       ├── orders_heatmap.png           # Heatmap representing order day of week against hour of day
 │       ├── reorder_analysis.png         # Histogram of reorder rates and predictability
-│       ├── user_behaviour.png           # Split users by variety, engagement, and loyalty
+│       ├── user_behaviour.png           # Split users by variety of unique products purchased
 │       │
 │       └── instacart_sql_pipeline_diagram.png  # Diagram of ETL flow
 │
