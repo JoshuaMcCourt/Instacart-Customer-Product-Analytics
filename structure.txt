@@ -58,7 +58,7 @@ instacart_analytics/
 │       ├── order_patterns.png           # Line chart showing order trends over time
 │       ├── orders_heatmap.png           # Heatmap representing order day of week against hour of day
 │       ├── reorder_analysis.png         # Histogram of reorder rates and predictability
-│       ├── user_behaviour.png           # Split users by variety of unique products purchased
+│       └── user_behaviour.png           # Split users by variety of unique products purchased
 │
 ├── README.md                              # Project overview, instructions
 ├── .gitignore                             # Ignore raw data, temp files, system files
