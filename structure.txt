@@ -49,7 +49,8 @@ instacart_analytics/
 │   │   ├── 04_cross_product_affinity.sql      # Product co-occurrence analysis
 │   │   └── 05_pareto_analysis.sql             # Pareto cumulative contribution of products
 │   │
-│   └── full_pipeline.sql                 # Single script containing all parts for execution
+├── full_script/       # Single file version of the full pipeline
+│   └── full_script.sql
 │
 ├── docs/
 │   └── visuals/                         # Exported Tableau charts/screenshots
@@ -58,8 +59,6 @@ instacart_analytics/
 │       ├── orders_heatmap.png           # Heatmap representing order day of week against hour of day
 │       ├── reorder_analysis.png         # Histogram of reorder rates and predictability
 │       ├── user_behaviour.png           # Split users by variety of unique products purchased
-│       │
-│       └── instacart_sql_pipeline_diagram.png  # Diagram of ETL flow
 │
 ├── README.md                              # Project overview, instructions
 ├── .gitignore                             # Ignore raw data, temp files, system files
