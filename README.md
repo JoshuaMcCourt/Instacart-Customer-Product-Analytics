@@ -286,10 +286,6 @@ instacart_analytics/
 
 │ │ └── user_behaviour.png
 
-│ │
-
-│ └── instacart_sql_pipeline_diagram.png # ETL & analytics flow diagram
-
 │
 
 ├── full_script/ # Single file version of the full pipeline
