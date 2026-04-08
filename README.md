@@ -83,7 +83,7 @@ Raw CSVs
 
 +---------------------+
 
-| 03_feature_engineering/ -- Compute metrics & features
+| 03_feature_engineering/ | -- Compute metrics & features
 
 | user features, |
 
