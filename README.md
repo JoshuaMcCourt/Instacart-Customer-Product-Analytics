@@ -272,11 +272,11 @@ instacart_analytics/
 
 │ ├── visuals/ # Exported charts/screenshots from Tableau
 
-│ │ ├── order_patterns.png
-
 │ │ ├── basket_analysis.png
 
-│ │ ├── product_popularity.png
+│ │ ├── order_patterns.png
+
+│ │ ├── order_heatmap.png
 
 │ │ ├── reorder_analysis.png
 
