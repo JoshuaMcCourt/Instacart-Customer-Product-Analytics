@@ -168,19 +168,19 @@ instacart_analytics/
 
 │ └── processed/ # Exported tables ready for analysis/Tableau
 
-│ ├── dim_users.csv
+│     ├── dim_users.csv
 
-│ ├── dim_products.csv
+│     ├── dim_products.csv
 
-│ ├── fact_orders.csv
+│     ├── fact_orders.csv
 
-│ ├── fact_orders_tableau.csv
+│     ├── fact_orders_tableau.csv
 
-│ ├── fact_user_product.csv
+│     ├── fact_user_product.csv
 
-│ ├── fact_user_product_tableau.csv
+│     ├── fact_user_product_tableau.csv
 
-│ └── fact_user_cohorts.csv
+│     └── fact_user_cohorts.csv
 
 │
 
@@ -290,7 +290,7 @@ instacart_analytics/
 
 ├── full_script/ # Single file version of the full pipeline
 
-│ └── full_script.sql
+│   └── full_script.sql
 
 │
 
