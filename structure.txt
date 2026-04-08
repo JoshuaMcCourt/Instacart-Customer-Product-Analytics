@@ -48,7 +48,7 @@ instacart_analytics/
 │   │   ├── 03_product_dependency.sql          # Avg purchase position for products
 │   │   ├── 04_cross_product_affinity.sql      # Product co-occurrence analysis
 │   │   └── 05_pareto_analysis.sql             # Pareto cumulative contribution of products
-│   │
+│   
 ├── full_script/       # Single file version of the full pipeline
 │   └── full_script.sql
 │
