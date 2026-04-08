@@ -254,21 +254,21 @@ instacart_analytics/
 
 │ │
 
-│ └── 05_analysis/ # Advanced analytics & insights
+│ ├── 05_analysis/ # Advanced analytics & insights
 
-│ ├── 01_data_overview.sql
+│ │ ├── 01_data_overview.sql
 
-│ ├── 02_order_patterns.sql
+│ │ ├── 02_order_patterns.sql
 
-│ ├── 03_basket_analysis.sql
+│ │ ├── 03_basket_analysis.sql
 
-│ ├── 04_product_analysis.sql
+│ │ ├── 04_product_analysis.sql
 
-│ ├── 05_reorder_analysis.sql
+│ │ ├── 05_reorder_analysis.sql
 
-│ ├── 06_user_behaviour.sql
+│ │ ├── 06_user_behaviour.sql
 
-│ └── 07_advanced_insights.sql
+│ │ └── 07_advanced_insights.sql
 
 │
 
