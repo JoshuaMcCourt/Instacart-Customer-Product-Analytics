@@ -1,30 +1,137 @@
-# Instacart Analytics Project
+# Instacart Analytics Project (SQL Server | Tableau)
 
 ## Overview
 
-This project implements a **complete end-to-end SQL Server analytics pipeline** to explore and understand e-commerce user behavior and product performance using the **Instacart dataset**. It demonstrates advanced analytics, feature engineering, and data mart creation while preparing results for **Tableau visualizations**.
+This project implements a complete end-to-end SQL Server analytics pipeline to explore and understand large-scale e-commerce user behaviour and product performance using the Instacart dataset (~30M+ transaction rows).
 
-The project highlights:
+It is designed to replicate real-world **analytics engineering workflows**, including data ingestion, transformation, feature engineering, and data mart construction, with outputs prepared for business intelligence tools such as Tableau.
 
-- **Data ingestion & staging:** Efficiently load raw CSVs into staging tables with quality checks.  
-- **Intermediate transformations:** Merge tables and compute aggregate metrics for users, products, and orders.  
-- **Feature engineering:** Compute advanced metrics such as:
-  - Reorder rates per user and product.  
-  - Basket diversity and variety segmentation.  
-  - Time-based engagement metrics (e.g., average days between orders).  
-  - Product affinity and co-occurrence.  
-- **Data marts:** Build dimension and fact tables optimized for reporting, analytics, and dashboarding:
-  - `dim_users`, `dim_products`, `fact_orders`, `fact_user_product`, `fact_user_cohorts`.  
-- **Advanced analytics & insights:** Cohort analysis, cross-product affinity, Pareto analysis, and identification of highly engaged users.  
-- **Visualization-ready outputs:** Export tables as CSV for use in Tableau dashboards.
+## Business Context & Value
 
-**Skills demonstrated:** SQL Server ETL, advanced T-SQL (CTEs, window functions), feature engineering, analytical thinking, scalable query optimization, and Tableau-ready data preparation.
+Understanding customer purchasing behaviour is critical in e-commerce for driving growth, retention, and operational efficiency.
 
-## Getting the Raw Instacart Dataset
+This project demonstrates how data can support:
 
-This project uses the **Instacart Market Basket Analysis** dataset. You can download all raw CSV files from Kaggle:  
+- Customer segmentation and targeting strategies
+- Product recommendation and cross-sell opportunities
+- Inventory and supply chain optimisation
+- Identification of high-value users and repeat purchasing patterns
+- Basket composition analysis to improve product placement and bundling
 
+## Key Analytical Insights
+
+The pipeline enables deep behavioural analysis across users and products, including:
+
+- Identification of **high-frequency and high-value customer segments**
+- Measurement of **product reorder rates and customer loyalty patterns**
+- Analysis of **basket diversity and purchasing variety**
+- Detection of **product co-occurrence relationships** (affinity analysis)
+- Temporal analysis of ordering behaviour (e.g. time between purchases)
+- Cohort-based retention and engagement trends over time
+
+## Pipeline Architecture
+
+The project follows a structured analytics engineering workflow:
+
+Raw CSVs
+
+   ↓
+
+Staging Layer (Data Ingestion & Quality Checks)
+
+   ↓
+
+Intermediate Transformations (Joins & Aggregations)
+
+   ↓
+
+Feature Engineering (User, Product, Behavioural Metrics)
+
+   ↓
+
+Data Marts (Star Schema Design)
+
+   ↓
+
+Analytical Queries
+
+   ↓
+
+Tableau Dashboards
+
+## Data Model Design
+
+A star-schema inspired data model was implemented to optimise analytical querying and BI performance:
+
+- **dim_users** – User-level behavioural aggregates
+- **dim_products** – Product metadata and performance metrics
+- **fact_orders** – Transaction-level order data
+- **fact_user_product** – User-product interaction history
+- **fact_user_cohorts** – Cohort-based retention and engagement tracking
+
+This structure enables scalable analysis and efficient dashboard integration.
+
+## What This Project Demonstrates
+
+#### SQL Server Data Engineering
+- End-to-end ETL pipeline design using staging, transformation, and mart layers
+- Efficient ingestion and processing of large-scale CSV datasets
+- Modular and reproducible pipeline architecture
+
+#### Advanced SQL & Analytics
+- Extensive use of **CTEs, window functions, and aggregations**
+- Cohort analysis and retention modelling
+- Cross-product affinity and basket analysis
+- Time-based behavioural analytics
+
+#### Feature Engineering
+- Reorder rates at user and product level
+- Basket diversity and segmentation metrics
+- Product co-occurrence and affinity features
+- Customer engagement and frequency metrics
+
+#### Business Intelligence Readiness
+- Tableau-ready datasets with minimal transformation required
+- Structured outputs optimised for dashboard performance
+- Clear separation between transformation and presentation layers
+
+## Scale & Performance
+- Processed datasets exceeding **30M+ transaction rows**
+- Optimised transformations using staging and intermediate layers
+- Designed for scalability and efficient query execution on large datasets
+- Leveraged SQL Server-specific optimisations (window functions, COUNT_BIG, filtered aggregations)
+
+## SQL Engineering Highlights
+- Modular query design using layered SQL scripts
+- Efficient handling of large joins across multiple tables
+- Use of window functions for ranking, partitioning, and temporal analysis
+- Aggregation strategies for performance optimisation
+- Structured pipeline mirroring production analytics workflows
+
+## Visualisation Outputs
+
+Processed datasets are exported into Tableau-ready formats, enabling interactive dashboards covering:
+- Order trends and temporal patterns
+- Customer purchasing behaviour
+- Product popularity and ranking
+- Basket composition and diversity
+- Reorder behaviour and retention analysis
+
+Dashboard outputs are available in:
+`docs/visuals/`
+
+## Data Sources
+
+This project uses the **Instacart Market Basket Analysis dataset**.
+
+Due to file size constraints, raw CSV files are not included in this repository.
+
+To reproduce:
+1. Download dataset from Kaggle:
 **Kaggle Dataset:** [Instacart Market Basket Analysis](https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis?select=order_products__prior.csv)
+2. Extract files into:
+`data/raw/`
+
 
 ### Included Files
 
@@ -37,13 +144,6 @@ This project uses the **Instacart Market Basket Analysis** dataset. You can down
 | `aisles.csv` | Product aisle information. |
 | `departments.csv` | Product department information. |
 
-### Steps to Download
-
-1. **Create a Kaggle account** if you don’t already have one.  
-2. Visit the dataset page: [Kaggle Dataset Link](https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis/data)  
-3. Click **Download** to get a ZIP of all CSV files.  
-4. Unzip the archive and place all CSV files in your project’s `data/raw/` folder.
-5. **Reminder:** `order_products__prior.csv` is the largest file (~30M rows) and forms the foundation for most analytics in this project.
 
 ### ETL & Analytics Pipeline Flow
 
@@ -301,21 +401,19 @@ instacart_analytics/
 └── structure.txt # File tree structure
 
 
-## Notes & Considerations
-
-- **Raw CSVs are excluded from GitHub** due to file size; placeholders exist in `data/raw/`.  
-- Scripts must be run sequentially:  
-  `01_staging → 02_intermediate → 03_feature_engineering → 04_marts → 05_analysis`.  
-- **Temporary tables and CTEs** are used extensively to optimize performance on large datasets.  
-- **Exports to CSV** allow Tableau dashboards without additional transformations.  
-- All scripts are **SQL Server-optimized**, using window functions, `COUNT_BIG`, and filtered aggregations.  
+## Workflow
+1. Load raw CSVs into staging tables
+2. Perform intermediate transformations and aggregations
+3. Engineer behavioural and analytical features
+4. Build dimension and fact tables
+5. Run analytical queries
+6. Export results for Tableau dashboards
 
 ## Getting Started
 
 1. Clone the repository:  
-   ```bash
-   git clone <repo_url>
-   cd instacart_analytics
+   `git clone <repo_url>
+   cd instacart_analytics`
    
 2. Place raw CSVs into `data/raw/`.
 
@@ -328,16 +426,41 @@ instacart_analytics/
 
 6. Use `docs/visuals/` for dashboard screenshots for your portfolio.
 
+## Why This Project Matters
+
+This project demonstrates the ability to design and implement **production-style analytics pipelines**, bridging the gap between raw data and actionable business insight.
+
+It reflects real-world analytics engineering practices, including:
+
+- Structured ETL workflows
+- Scalable data modelling
+- Feature engineering for behavioural analysis
+- Preparation of data for downstream BI and decision-making
+
 ## Skills Demonstrated
+- SQL Server ETL & Data Engineering
+- Advanced T-SQL (CTEs, window functions, aggregations)
+- Data modelling (star schema design)
+- Feature engineering for analytics
+- Large-scale data processing
+- Tableau-ready data preparation
+- Analytical thinking and business insight generation
 
-**SQL Server ETL & Data Engineering:** Efficient staging, cleaning, and mart creation.
+## Potential Extensions
+- Integration with cloud data warehouses (BigQuery, Snowflake, Azure SQL)
+- Incremental data pipeline design for real-time analytics
+- Automated dashboard deployment
+- Integration with Python for advanced modelling
+- Recommendation system development using user-product interactions
+  
+## Notes & Considerations
 
-**Analytical SQL:** CTEs, window functions, aggregations, cohort analysis, cross-product affinity.
+- **Raw CSVs are excluded from GitHub** due to file size; placeholders exist in `data/raw/`.  
+- Scripts must be run sequentially.
+- **Temporary tables and CTEs** are used extensively to optimize performance on large datasets.  
+- **Exports to CSV** allow Tableau dashboards without additional transformations.  
+- All scripts are **SQL Server-optimized**, using window functions, `COUNT_BIG`, and filtered aggregations.
 
-**Feature Engineering:** Reorder rates, basket diversity, product co-occurrence, engagement metrics.
+## Disclaimer
 
-**Visualization Preparation:** Tableau-ready datasets with minimal processing.
-
-**Pipeline Design:** Reproducible, modular, and scalable workflow.
-
-**Portfolio Presentation:** Well-structured repository with documentation, visuals, and diagrams.
+This project is for portfolio purposes only and is not intended for production deployment.
